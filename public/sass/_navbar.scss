@@ -1,0 +1,107 @@
+.nav-icon {
+  color: #fff;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  width: 30px;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.nav-element-text {
+  padding: 0px 8px;
+  color: #fff;
+}
+
+.button .icon:last-child, .button .tag:last-child {
+  margin-left: 0px;
+  margin-right: -2px;
+}
+
+.button .icon:first-child, .button .tag:first-child {
+  margin-left: -2px;
+  margin-right: 0px;
+}
+
+.nav-button-icon {
+  font-size: 1pc;
+  line-height: 30px;
+  top: 0;
+  left: 0;
+  font-weight: 400;
+}
+
+.nav-search-icon {
+  cursor: pointer;
+  position: absolute;
+  font-size: 1pc;
+  right: 0;
+  top: 0;
+}
+
+
+.nav-button {
+  background: linear-gradient(to bottom,rgba(255,255,255,.3) 0,rgba(255,255,255,.2) 100%);
+  font-weight: 700;
+  border: none;
+  line-height: 30px;
+  height: 30px;
+  margin-right: 8px;
+  padding: 0;
+}
+
+.nav {
+  background: rgba(0,0,0,.15);
+  min-height: 30px;
+  padding: 5px;
+}
+
+.nav-item {
+  padding: 0px;
+}
+
+.nav-item a {
+  color: #f3f3f3;
+}
+
+
+.nav-logo-container {
+  background-image: url(../images/header-logo.png);
+  background-repeat: no-repeat;
+  background-size: 5pc 30px;
+  right: 0;
+  top: 0;
+}
+
+.nav-menu {
+  padding-right: 0px;
+}
+
+.nav-logo {
+  display: block;
+}
+
+.nav-logo, .nav-logo-container {
+  height: 30px;
+  width: 5pc;
+  color: #fff;
+}
+
+.input {
+  background-color: rgba(255,255,255,.3);
+  border-radius: 3px;
+  border: none;
+  color: rgba(255,255,255,.5);
+  font-size: 13px;
+  height: 30px;
+  margin: 0;
+  min-height: 30px;
+  padding-right: 30px;
+  padding-left: 8px;
+  line-height: 19px;
+  width: 180px;
+}

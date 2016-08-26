@@ -1,29 +1,45 @@
 import React from 'react';
 
+const Navbar = React.createClass({
 
- const Navbar = React.createClass({
-   
-   render: function () {
-     return (
-       <nav className="nav">
-         <div className="nav-left">
-           <a className="nav-item is-brand" href="#">
-             <img src="/images/bulma.png" alt="Bulma logo}"/>
-           </a>
-         </div>
+  getInitialState() {
 
-         <div className="nav-center">
-           <a className="nav-item" href="#">
-      <span className="icon">
-        <i className="fa fa-github"/>
-      </span>
-           </a>
-           <a className="nav-item" href="#">
-      <span className="icon">
-        <i className="fa fa-twitter"/>
-      </span>
-           </a>
-         </div>
+    return {
+      userDetails: {
+        name: "Emily Walker",
+        avatar_url: "https://trello-avatars.s3.amazonaws.com/a2ae97a443fe8c1de0da09cd010f133f/30.png"
+      }
+    }
+
+  },
+
+  render: function () {
+    return (
+      <nav className="nav">
+        <div className="nav-left">
+          <span className="nav-item">
+          <a className="button nav-button" href="#">
+             <span className="icon nav-icon">
+          <i className="fa fa-trello"/>
+        </span>
+            <span className="nav-element-text">Boards</span>
+          </a>
+          <p className="control has-icon">
+            <input className="input" type="text"/>
+            <span className="icon nav-icon nav-search-icon">
+              <i className=" fa fa-search fa-flip-horizontal"/>
+              </span>
+          </p>
+            </span>
+        </div>
+
+        <div className="nav-center">
+          <span className="nav-item">
+          <a className="nav-logo-container">
+              <span className="nav-logo"/>
+            </a>
+            </span>
+        </div>
 
   <span className="nav-toggle">
     <span/>
@@ -31,36 +47,31 @@ import React from 'react';
     <span/>
   </span>
 
-         <div className="nav-right nav-menu">
-           <a className="nav-item" href="#">
-             Home
-           </a>
-           <a className="nav-item" href="#">
-             Documentation
-           </a>
-           <a className="nav-item" href="#">
-             Blog
-           </a>
+        <div className="nav-right nav-menu">
+          <a className="button nav-button" href="#">
+        <span className="icon nav-icon nav-button-icon">
+          <i className="fa fa-plus"/>
+        </span>
+          </a>
+          <a className="button nav-button" href="#">
+             <img src={this.state.userDetails.avatar_url}/>
+            <span className="nav-element-text">{this.state.userDetails.name}</span>
+          </a>
+      <a className="button nav-button" href="#">
+        <span className="icon nav-icon nav-button-icon">
+          <i className="fa fa-info"/>
+        </span>
+      </a>
+      <a className="button nav-button" href="#">
+        <span className="icon nav-icon nav-button-icon">
+          <i className="fa fa-bell-o"/>
+        </span>
+      </a>
+        </div>
+      </nav>
+    )
+  }
 
-    <span className="nav-item">
-      <a className="button" >
-        <span className="icon">
-          <i className="fa fa-twitter"/>
-        </span>
-        <span>Tweet</span>
-      </a>
-      <a className="button is-primary" href="#">
-        <span className="icon">
-          <i className="fa fa-download"/>
-        </span>
-        <span>Download</span>
-      </a>
-    </span>
-         </div>
-       </nav>
-     )
-   }
-   
- });
+});
 
 export default Navbar;

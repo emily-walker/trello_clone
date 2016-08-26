@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Navbar from './components/navbar';
-import Footer from './components/footer';
+import List from './components/list';
 
 
 const App = React.createClass({
@@ -9,28 +9,67 @@ const App = React.createClass({
   getInitialState() {
 
     return {
-      lists: ["Rubbish1","Rubbish2","Rubbish3"]
+      boardName: "Tangerine",
+      lists: [
+        {
+          name: "BACKLOG",
+          cards: [
+            {
+              title: "Navbar",
+              Members: [],
+              Description: "Description goes here"
+            },
+            {
+              title: "Main",
+              Members: [],
+              Description: "Description goes here"
+            },
+            {
+              title: "Footer",
+              Members: [],
+              Description: "Description goes here"
+            }
+          ]
+        },
+        {
+          name: "NEXT",
+          cards: [
+            {
+              title: "Navbar",
+              Members: [],
+              Description: "Description goes here"
+            },
+            {
+              title: "Main",
+              Members: [],
+              Description: "Description goes here"
+            },
+            {
+              title: "Footer",
+              Members: [],
+              Description: "Description goes here"
+            }
+          ]
+        }
+      ]
     }
-
   },
+
 
   render: function () {
     return (
-      <div >
+      <div className="page-content">
         <Navbar/>
-        <h1>My sweet project</h1>
-        <div className="List">
-          {this.state.lists.map((repo, index) => {
-            return (
-              <div key={index} className="repo-list-item">
-                <span className="repo-list-meta repo-name">{repo.name}</span>
-                <span className="repo-list-meta repo-description">{repo.description}</span>
-                <span className="repo-list-meta repo-date">Updated on {repo.updated_at}</span>
-              </div>
-            )
-          })}
+        <div className="board-header">
+          <a className="board-header-btn">
+            <span className="board-header-btn-name">{this.state.boardName}</span>
+          </a>
+          <div className="board-header-btns mod-left">
+          </div>
+        </div>
+        <div id="board">
+          <List lists={this.state.lists}/>
         </div >
-        <Footer/>
       </div>
     );
   }
