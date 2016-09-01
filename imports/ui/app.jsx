@@ -45,8 +45,8 @@ class App extends Component {
             <input className="list-name-input" placeholder="Add a list..." autoComplete="off" type="text"
                    onKeyPress={this.checkSubmit.bind(this)}/>
           </div>
+          </div>
         </div >
-      </div>
     );
   }
 }

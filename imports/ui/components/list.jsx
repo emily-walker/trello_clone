@@ -9,15 +9,16 @@ import {Cards} from '../../api/cards';
 export default class List extends Component {
 
   toggleCardComposer() {
-    $(".open-card-composer." + this.props.list._id._str + ", .card-composer." + this.props.list._id._str).toggle();
+    $(".open-card-composer." + this.props.list._id + ", .card-composer." + this.props.list._id).toggle();
   }
 
   addNewCard(e) {
     e.preventDefault();
-    const title = $('textarea.list-card-composer-textarea.' + this.props.list._id._str).val();
+    const title = $('textarea.list-card-composer-textarea.' + this.props.list._id).val();
     if (title.length > 0) {
       Meteor.call('cards.insert', title, this.props.list._id);
       }
+    this.toggleCardComposer();
     $('textarea.list-card-composer-textarea').val('');
   }
 
@@ -26,17 +27,17 @@ export default class List extends Component {
   }
   
   updateList() {
-    $('.list-name.' + this.props.list._id._str).removeAttr("readonly", "readonly");
-    $('.list-name.' + this.props.list._id._str).blur(() => {
-      $('.list-name.' + this.props.list._id._str).attr("readonly", "readonly");
-      var newTitle = $('.list-name.' + this.props.list._id._str).val();
+    $('.list-name.' + this.props.list._id).removeAttr("readonly", "readonly");
+    $('.list-name.' + this.props.list._id).blur(() => {
+      $('.list-name.' + this.props.list._id).attr("readonly", "readonly");
+      var newTitle = $('.list-name.' + this.props.list._id).val();
       Meteor.call('lists.update', this.props.list._id, newTitle);
     });
   }
 
   filterCards() {
     let filteredCards = this.props.cards.filter(card => {
-      return card.listId._str === this.props.list._id._str;
+      return card.listId === this.props.list._id;
     });
 
     var x = filteredCards.map((card, i) => {
@@ -51,7 +52,7 @@ export default class List extends Component {
         <div className="list-wrapper">
           <div className="list">
             <div className="list-header">
-              <textarea className={"list-name " + this.props.list._id._str} defaultValue={this.props.list.title} readOnly="readonly"/>
+              <textarea className={"list-name " + this.props.list._id} defaultValue={this.props.list.title} readOnly="readonly"/>
               <span className="icon icon-lg dark-hover div-header-icon">
               <i className="fa fa-pencil" onClick={this.updateList.bind(this)}/>
             </span>
@@ -63,14 +64,14 @@ export default class List extends Component {
               <div id="cards">
                 {this.filterCards()}
               </div>
-              <a className={"open-card-composer " + this.props.list._id._str}
+              <a className={"open-card-composer " + this.props.list._id}
                  onClick={this.toggleCardComposer.bind(this)}>
                 Add a card...
               </a>
-              <div className={"card-composer " + this.props.list._id._str}>
+              <div className={"card-composer " + this.props.list._id}>
                 <div className="list-card">
                   <div className="list-card-details">
-                          <textarea className={"list-card-composer-textarea " + this.props.list._id._str}>
+                          <textarea className={"list-card-composer-textarea " + this.props.list._id}>
                           </textarea>
                   </div>
                 </div>

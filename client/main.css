@@ -1,3 +1,7 @@
+html, body {
+    overflow: hidden;
+}
+
 .nav-element-text {
     padding: 0px 8px;
     color: #fff;
@@ -139,10 +143,12 @@
     white-space: nowrap;
     height: 100%;
     width: 100%;
+    display: inline-flex;
     margin-bottom: 10px;
     overflow-x: auto;
     overflow-y: hidden;
     padding-bottom: 10px;
+    padding-right: 20px;
     top: 0;
     right: 0;
     bottom: 0;
@@ -157,13 +163,13 @@
 
 
 .list-wrapper.mod-add {
-    height: auto;
-    min-height: 30px;
+    height: 30px;
     padding: 4px;
+    border-radius: 3px;
 }
 
 .list-wrapper:last-child {
-    margin-right: 10px;
+    margin-right: 5px;
 }
 
 .list-wrapper.mod-add.is-idle .list-name-input {
@@ -367,7 +373,6 @@ button.mod-compact {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    overflow: scroll;
 }
 
 .icon-lg.light {
