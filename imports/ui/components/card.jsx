@@ -13,24 +13,24 @@ export default class Card extends Component {
     $('.list-card-title.' + this.props.card._id).attr('contenteditable','true');
     $('.list-card-title.' + this.props.card._id).blur(() => {
       $('.list-card-title.' + this.props.card._id).attr('contenteditable','false');
-      var newText = $('.list-card-title.' + this.props.card._id).text();
-      Meteor.call('cards.update', this.props.card._id, newText);
+      var newCardName = $('.list-card-title.' + this.props.card._id).text();
+      Meteor.call('cards.update', this.props.card._id, newCardName);
     });
 
   }
 
   render() {
     return (
-      <div key={this.props.index}>
-        <div className={"list-card"}>
+      <div key={this.props.key}>
+        <div className="list-card">
           <div className="list-card-details">
             <div className={"list-card-title " + this.props.card._id}>
               {this.props.card.title}
             </div>
-            <span className="icon icon-lg dark-hover card-icon">
+            <span className="icon icon-lg dark-hover div-header-icon">
               <i className="fa fa-pencil" onClick={this.updateCard.bind(this)}/>
             </span>
-            <span className="icon icon-lg dark-hover card-icon">
+            <span className="icon icon-lg dark-hover div-header-icon">
               <i className="fa fa-times" onClick={this.removeCard.bind(this)}/>
             </span>
           </div>

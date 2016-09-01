@@ -6,7 +6,6 @@ export const Cards = new Mongo.Collection('cards');
 
 Meteor.methods({
   'cards.insert' (title, listId) {
-    //console.log(title, listId);
     check(title, String);
     Cards.insert({
       title: title,
@@ -16,12 +15,11 @@ Meteor.methods({
   },
 
   'cards.remove' (cardId) {
-    check(cardId, String);
     Cards.remove(cardId);
   },
 
   'cards.update' (cardId, newTitle) {
-    check(cardId, String);
+    check(newTitle, String);
     Cards.update(cardId, {
       $set: {title: newTitle}
     });

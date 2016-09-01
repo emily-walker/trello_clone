@@ -137,6 +137,8 @@
 #board {
     user-select: none;
     white-space: nowrap;
+    height: 100%;
+    width: 100%;
     margin-bottom: 10px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -145,6 +147,31 @@
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+.list-wrapper.mod-add.is-idle {
+    background: rgba(0,0,0,.12);
+    cursor: pointer;
+    color: #fff;
+}
+
+
+.list-wrapper.mod-add {
+    height: auto;
+    min-height: 30px;
+    padding: 4px;
+}
+
+.list-wrapper:last-child {
+    margin-right: 10px;
+}
+
+.list-wrapper.mod-add.is-idle .list-name-input {
+    background: 0 0;
+    border-color: transparent;
+    box-shadow: none;
+    cursor: pointer;
+    margin: 0;
 }
 
 .list-card {
@@ -177,7 +204,7 @@
     position: relative;
 }
 
-.card-icon {
+.div-header-icon {
     display: inline-block;
     float: right;
 }
@@ -264,6 +291,24 @@ textarea {
     padding: 7px;
 }
 
+.nav-logo-container {
+    background-image: url(/images/header_logo.png);
+    background-repeat: no-repeat;
+    background-size: 5pc 30px;
+    right: 0;
+    top: 0;
+}
+
+.nav-logo {
+    display: block;
+}
+
+.nav-logo, .nav-logo-container {
+    height: 30px;
+    width: 5pc;
+    color: #fff;
+}
+
 .list-header-num-cards {
     color: #8c8c8c;
     margin: 0;
@@ -317,8 +362,12 @@ button.mod-compact {
 .page-content {
     background: #0079bf;
     font: 14px "Helvetica Neue",Arial,Helvetica,sans-serif;
-    display: block;
     height: 675px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: scroll;
 }
 
 .icon-lg.light {
