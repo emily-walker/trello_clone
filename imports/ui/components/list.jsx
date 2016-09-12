@@ -25,7 +25,7 @@ export default class List extends Component {
   removeList() {
     Meteor.call('lists.remove', this.props.list._id);
   }
-  
+
   updateList() {
     $('.list-name.' + this.props.list._id).removeAttr("readonly", "readonly");
     $('.list-name.' + this.props.list._id).blur(() => {
@@ -53,12 +53,8 @@ export default class List extends Component {
           <div className="list">
             <div className="list-header">
               <textarea className={"list-name " + this.props.list._id} defaultValue={this.props.list.title} readOnly="readonly"/>
-              <span className="icon icon-lg dark-hover div-header-icon">
               <i className="fa fa-pencil" onClick={this.updateList.bind(this)}/>
-            </span>
-            <span className="icon icon-lg dark-hover div-header-icon">
               <i className="fa fa-times" onClick={this.removeList.bind(this)}/>
-            </span>
             </div>
             <div className="list-cards">
               <div id="cards">

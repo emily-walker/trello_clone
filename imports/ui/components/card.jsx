@@ -28,10 +28,10 @@ export default class Card extends Component {
               {this.props.card.title}
             </div>
             <span className="icon icon-lg dark-hover div-header-icon">
-              <i className="fa fa-pencil" onClick={this.updateCard.bind(this)}/>
+              <i className="fa fa-times" onClick={this.removeCard.bind(this)}/>
             </span>
             <span className="icon icon-lg dark-hover div-header-icon">
-              <i className="fa fa-times" onClick={this.removeCard.bind(this)}/>
+              <i className="fa fa-pencil" onClick={this.updateCard.bind(this)}/>
             </span>
           </div>
         </div>

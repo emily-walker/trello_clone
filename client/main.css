@@ -255,6 +255,10 @@ html, body {
     white-space: normal;
 }
 
+.list-header .fa:last-child {
+  margin-left: 10px;
+}
+
 .list-header {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
@@ -269,6 +273,8 @@ html, body {
     background: 0 0;
     border: none;
     border-radius: 3px;
+    display: inline;
+    width: 205px;
     box-shadow: none;
     font-weight: 700;
     margin: -3px -5px;
@@ -277,6 +283,7 @@ html, body {
     resize: none;
     overflow: hidden;
     word-wrap: break-word;
+    text-transform: uppercase;
     height: 24px;
     color: #4d4d4d;
 }
@@ -378,6 +385,11 @@ button.mod-compact {
 .icon-lg.light {
     color: #fff;
     text-decoration: none;
+}
+
+.fa {
+  display: inline;
+  cursor: pointer;
 }
 
 .icon-lg {
